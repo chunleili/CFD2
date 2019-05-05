@@ -50,10 +50,12 @@ int main()
 
 		if(residual<RESIDUAL_LIMIT)
 		{	
-			cout<<"\nConverged! \nFinal residual ="<<residual
-			<<"\nLoop times = "<<loopTimes<<endl
+			cout<<"\nConverged!"<<endl
+			<<"\nMx= "<<Mx<<"\tMy= "<<My<<endl
+			<<"Final residual ="<<residual<<endl
+			<<"Loop times = "<<loopTimes<<endl
 			<<"Final field has been written into \"finalMesh.dat\" \n"
-			<<"History of residual has been written into \"residual.plt\"\n";
+			<<"History of residual has been written into \"residual.plt\"";
 			printNodes(foutFinalMesh);
 			break;
 		}
@@ -64,7 +66,6 @@ int main()
 		cout<<"\nFail to converge! in "<<loopTimes<<" times\n"
 		<<"Final residual ="<<residual<<"\n\n\n";
 	}
-	cout<<"\nMx= "<<Mx<<"\tMy= "<<My<<endl;
 	cout<<"\nWall time = "<<(double)clock()/CLOCKS_PER_SEC<<" s"<<endl;
 	cout<<"CPU time= "<<(double)clock()<<" s"<<endl;
 return 0; 
